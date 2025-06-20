@@ -19,6 +19,6 @@ class Foobaz extends Component
             ->success()
             ->send();
 
-//        $this->dispatch('an-event');
+        $this->dispatch('an-event');
     }
 }
