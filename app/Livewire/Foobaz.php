@@ -12,13 +12,25 @@ class Foobaz extends Component
         return view('livewire.foobaz');
     }
 
-    public function submit()
+    public function withEvent()
     {
+        \Log::info('Notification with Event');
+
         Notification::make()
-            ->title('I wanna get lost')
+            ->title('With Event')
             ->success()
             ->send();
 
         $this->dispatch('an-event');
+    }
+
+    public function withoutEvent()
+    {
+        \Log::info('Notification without Event');
+
+        Notification::make()
+            ->title('Without Event')
+            ->success()
+            ->send();
     }
 }
